@@ -5,15 +5,16 @@ stop nginx .
 ```
 /etc/trojan_mgr.sh
 ```
+![nginx stop ](/Images/nginx_stop.png)
 ```
-[root@138 ~]# .acme.sh/acme.sh --renew -d trojanjx2.tmdjx.online --ecc
-[Fri Jul  8 23:04:04 CST 2022] Renew: 'trojanjx2.tmdjx.online'
+[root@138 ~]# .acme.sh/acme.sh --renew -d domainname(for example :example.com) --ecc
+[Fri Jul  8 23:04:04 CST 2022] Renew: 'domainname(for example :example.com)'
 [Fri Jul  8 23:04:05 CST 2022] Using CA: https://acme-v02.api.letsencrypt.org/directory
 [Fri Jul  8 23:04:05 CST 2022] Standalone mode.
-[Fri Jul  8 23:04:05 CST 2022] Single domain='trojanjx2.tmdjx.online'
+[Fri Jul  8 23:04:05 CST 2022] Single domain='domainname(for example :example.com)'
 [Fri Jul  8 23:04:05 CST 2022] Getting domain auth token for each domain
-[Fri Jul  8 23:04:06 CST 2022] Getting webroot for domain='trojanjx2.tmdjx.online'
-[Fri Jul  8 23:04:06 CST 2022] Verifying: trojanjx2.tmdjx.online
+[Fri Jul  8 23:04:06 CST 2022] Getting webroot for domain='domainname(for example :example.com)'
+[Fri Jul  8 23:04:06 CST 2022] Verifying: domainname(for example :example.com)
 [Fri Jul  8 23:04:06 CST 2022] Standalone mode server
 [Fri Jul  8 23:04:08 CST 2022] Pending, The CA is processing your order, please just wait. (1/30)
 [Fri Jul  8 23:04:10 CST 2022] Success
@@ -26,17 +27,19 @@ stop nginx .
 -----BEGIN CERTIFICATE-----
 xxxxxxxxxx
 -----END CERTIFICATE-----
-[Fri Jul  8 23:04:11 CST 2022] Your cert is in: /root/.acme.sh/trojanjx2.tmdjx.online_ecc/trojanjx2.tmdjx.online.cer
-[Fri Jul  8 23:04:11 CST 2022] Your cert key is in: /root/.acme.sh/trojanjx2.tmdjx.online_ecc/trojanjx2.tmdjx.online.key
-[Fri Jul  8 23:04:11 CST 2022] The intermediate CA cert is in: /root/.acme.sh/trojanjx2.tmdjx.online_ecc/ca.cer
-[Fri Jul  8 23:04:11 CST 2022] And the full chain certs is there: /root/.acme.sh/trojanjx2.tmdjx.online_ecc/fullchain.cer
-[Fri Jul  8 23:04:12 CST 2022] Installing key to: /data/trojanjx2.tmdjx.online/privkey.key
-[Fri Jul  8 23:04:12 CST 2022] Installing full chain to: /data/trojanjx2.tmdjx.online/fullchain.crt
+[Fri Jul  8 23:04:11 CST 2022] Your cert is in: /root/.acme.sh/domainname(for example :example.com)_ecc/domainname(for example :example.com).cer
+[Fri Jul  8 23:04:11 CST 2022] Your cert key is in: /root/.acme.sh/domainname(for example :example.com)_ecc/domainname(for example :example.com).key
+[Fri Jul  8 23:04:11 CST 2022] The intermediate CA cert is in: /root/.acme.sh/domainname(for example :example.com)_ecc/ca.cer
+[Fri Jul  8 23:04:11 CST 2022] And the full chain certs is there: /root/.acme.sh/domainname(for example :example.com)_ecc/fullchain.cer
+[Fri Jul  8 23:04:12 CST 2022] Installing key to: /data/domainname(for example :example.com)/privkey.key
+[Fri Jul  8 23:04:12 CST 2022] Installing full chain to: /data/domainname(for example :example.com)/fullchain.crt
 
 ```
 .acme.sh path is /root/.acme.sh
 
-trojanjx2.tmdjx.online is the domain name.
+domainname(for example :example.com) is the domain name.
+
+![renew cert by manual](/Images/cert_check.png)
 
 resart trojan-go
 
@@ -54,5 +57,10 @@ run the following code to start trojan-go
 [WARN]  2022/07/08 23:22:50 empty tls fallback port
 ........
 ```
+
+![start trojan-go by manual](/Images/start_bymanual.png)
+
 at last, reset trojan-go with /etc/trojan_mgr.sh
+
+![restart trojan-go by control panel](/Images/start_bycmd.png)
 
